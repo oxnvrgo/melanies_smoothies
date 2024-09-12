@@ -26,6 +26,7 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
+        ingredients_string = ingredients_string.strip()
 
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/{ingredients_string}")
         fv_df = st.dataframe( data=fruityvice_response.json(), use_container_width=True )
